@@ -4,9 +4,9 @@ Este arquivo contém instruções para qualquer assistente de IA, agente de cód
 
 ## Regra principal
 
-O projeto está atualmente em fase de **planejamento**.
+O projeto está em **implementação local com dados sintéticos**, autorizada em 2026-10-26.
 
-**Não criar código Python enquanto `docs/STATUS.md` não indicar explicitamente que a etapa de implementação foi iniciada.**
+Python está autorizado para schema, baseline local, CLI e testes. Gmail, OAuth e dados reais exigem uma etapa explícita posterior. Execute `python -m pytest` antes de concluir mudanças de código.
 
 ## Antes de realizar mudanças
 

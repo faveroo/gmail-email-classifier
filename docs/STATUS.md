@@ -2,29 +2,20 @@
 
 ## Fase atual
 
-**Etapa 0 — Documentação e planejamento.**
+**Implementação iniciada em 2026-10-26 — Etapas 1 a 3, exclusivamente com dados sintéticos.**
+O usuário autorizou sair da Etapa 0. Python está autorizado. A integração Gmail permanece futura.
 
-## Regra de implementação
+## Escopo desta entrega
 
-Ainda não criar código Python.
+Taxonomia v1, schema validado, estrutura Python, baseline TF-IDF + Logistic Regression
+em dois estágios, política de revisão, CLI local, testes e instruções de execução.
 
-## Próximas decisões
+## Limites
 
-1. validar o nome final do projeto/repositório;
-2. revisar as categorias iniciais;
-3. decidir qual conta/dataset será usado nos primeiros experimentos;
-4. definir um schema de dataset seguro;
-5. somente depois iniciar a implementação do baseline.
+Nenhum acesso a Gmail, credenciais ou mensagens reais. Resultados sintéticos verificam
+engenharia do pipeline; não demonstram qualidade em uma caixa real. Thresholds provisórios.
 
-## Concluído
+## Próxima etapa
 
-- visão inicial;
-- escopo inicial;
-- arquitetura conceitual;
-- estratégia de dados;
-- taxonomia provisória;
-- plano de ML;
-- estratégia de avaliação;
-- desenho da integração Gmail;
-- princípios de privacidade e segurança;
-- roadmap inicial.
+Revisar resultados locais e planejar, separadamente, coleta autorizada, anonimização,
+rotulagem humana e avaliação com dados representativos antes de qualquer automação Gmail.

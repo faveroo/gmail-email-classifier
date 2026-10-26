@@ -44,3 +44,27 @@ O dataset deverá ser separado em treino, validação e teste, evitando vazament
 ## Risco de vazamento
 
 Threads, mensagens duplicadas e templates podem produzir métricas artificialmente altas se versões quase idênticas aparecerem simultaneamente em treino e teste.
+
+## Schema v1 implementado
+
+Arquivo JSON UTF-8: lista não vazia de objetos, sem campos extras:
+
+| Campo | Tipo e regra |
+|---|---|
+| id | string não vazia e única; identificador sintético |
+| group_id | string não vazia; thread/template e variações pertencem ao mesmo grupo |
+| subject | string; assunto ou corpo deve conter texto |
+| body | string; texto simples, sem anexos |
+| is_spam | booleano JSON estrito |
+| category | null para spam, categoria v1 para legítimos |
+| source | nesta fase somente `synthetic` |
+| split | `train`, `validation` ou `test` |
+
+O loader rejeita IDs duplicados, conteúdo normalizado idêntico e grupos em splits
+diferentes. A detecção automática não identifica todas as paráfrases: agrupar templates
+é responsabilidade de quem prepara o dataset. Cada split deve conter spam e todas
+as categorias legítimas. Features: somente assunto + corpo. IDs, grupos e labels não
+entram no modelo. Sem remetentes, domínios ou outros metadados privados nesta fase.
+Validação serve para diagnósticos; teste fica reservado ao relatório final. Thresholds
+iniciais são provisórios, não otimizados no teste. Exemplos em `data/examples/` são
+inteiramente inventados e não medem generalização real.
