@@ -2,7 +2,7 @@
 
 Projeto experimental para construir um classificador de e-mails integrado ao Gmail, usando Machine Learning em Python.
 
-> **Estado atual:** planejamento e documentação. Ainda não existe código Python neste repositório.
+> **Estado atual:** baseline local executável com dados exclusivamente sintéticos. Implementação iniciada em 2026-10-26.
 
 ## Objetivo
 
@@ -47,7 +47,7 @@ Leitura recomendada:
 
 O andamento atual está em [`docs/STATUS.md`](docs/STATUS.md).
 
-## Estrutura planejada
+## Estrutura
 
 ```text
 gmail-email-classifier/
@@ -60,7 +60,7 @@ gmail-email-classifier/
 └── README.md
 ```
 
-As pastas de implementação existem inicialmente apenas com documentação. Código deve ser introduzido somente quando a etapa correspondente do roadmap for iniciada.
+O pacote Python fica em `src/gmail_classifier/`; testes em `tests/`, exemplos públicos em `data/examples/`. Não há integração Gmail implementada.
 
 ## Segurança
 
@@ -76,3 +76,46 @@ Este é um repositório público. Portanto, nunca devem ser versionados:
 - modelos treinados que possam memorizar informações sensíveis sem revisão prévia.
 
 Consulte [`docs/09-privacy-security.md`](docs/09-privacy-security.md).
+
+## Executar localmente
+
+Requer Python 3.11 ou superior. No PowerShell, na raiz do repositório:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -e ".[dev]"
+.\.venv\Scripts\python -m pytest
+.\.venv\Scripts\email-classifier train --dataset data/examples/synthetic-v1.json
+.\.venv\Scripts\email-classifier predict --model models/baseline.joblib --subject "Fatura disponível" --body "Pagamento do boleto da mensalidade"
+```
+
+No Linux/macOS use `.venv/bin/python` e `.venv/bin/email-classifier`.
+O treinamento cria `models/baseline.joblib` e `reports/baseline.json`, ignorados pelo Git.
+O relatório inclui distribuição, precision/recall/F1, matrizes de confusão, F1 macro,
+confiança por categoria, taxa de revisão e acerto de labels no fluxo completo.
+`category_on_true_legitimate` avalia o segundo modelo isoladamente; não representa a
+qualidade do fluxo completo. `spam_policy_precision: null` significa nenhuma sugestão
+de spam, não precision perfeita. Treino é diagnóstico, validação apoia decisões futuras
+e teste é reservado à avaliação final; nenhum dos dois últimos entra no fit do TF-IDF.
+
+A política sugere `IA/SPAM` a partir de 0.90. Até 0.20 de probabilidade de spam,
+a categoria precisa de confiança >= 0.60. Os demais casos vão para `IA/Revisar`.
+Esses valores são provisórios e configuráveis no treinamento com `--spam-threshold`,
+`--legitimate-threshold` e `--category-threshold`. Não são garantias de precisão.
+A CLI só produz JSON; não modifica mensagens. Texto totalmente fora do vocabulário
+vai para revisão, mas esse filtro não detecta toda mudança de domínio.
+
+O dataset contém 80 mensagens inventadas (40 treino, 20 validação, 20 teste):
+por split, respectivamente 4/2/2 exemplos de cada categoria e de spam. É uma amostra
+pequena para verificar o pipeline, insuficiente para avaliar qualidade real ou calibrar
+probabilidades. Não reduza os thresholds apenas para obter mais labels automáticas.
+
+Carregue apenas modelos treinados por você em ambiente confiável: o formato joblib
+pode executar código ao ser aberto. Retreine ao trocar a versão do scikit-learn.
+Não forneça mensagens privadas nos argumentos da CLI, pois podem ficar no histórico
+do terminal. A fase atual aceita apenas datasets declarados como `synthetic`; essa
+validação não consegue provar que um texto foi realmente inventado.
+
+Resultado inicial: a política padrão encaminhou 100% dos exemplos para revisão.
+Consulte [o registro do experimento](docs/experiments/README.md) antes de interpretar
+as métricas isoladas dos modelos.

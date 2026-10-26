@@ -51,3 +51,12 @@ Metadados poderão ser avaliados separadamente.
 2. caso não seja spam, classificador de categoria.
 
 Isso permite métricas, thresholds e ciclos de treinamento independentes.
+
+## Baseline local v0.1 implementado
+
+Dois pipelines independentes: TF-IDF de palavras (unigramas e bigramas,
+acentos normalizados), LogisticRegression com class_weight=balanced,
+random_state=42 e max_iter=1000. Assunto + corpo; sem features de metadados.
+Fit exclusivamente no split train; categorizador treinado somente com legítimos.
+Thresholds provisórios conforme D008; não ajustados pelo conjunto de teste.
+Artefato joblib contém versão de formato, pacote, sklearn e política. CLI e setup no README.

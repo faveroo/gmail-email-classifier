@@ -1,7 +1,6 @@
-# src/
+# Código-fonte
 
-Diretório reservado para o código-fonte futuro.
-
-Enquanto `docs/STATUS.md` indicar **Etapa 0**, não adicionar código Python aqui.
-
-A separação planejada inclui componentes para Gmail, pré-processamento, ML, políticas de decisão e treinamento.
+`gmail_classifier/dataset.py`: schema e integridade dos splits.
+`baseline.py`: treino, avaliação e persistência local dos dois classificadores.
+`policy.py`: sugestões conservadoras de labels e revisão humana.
+`cli.py`: comandos `train` e `predict`. Sem adaptador Gmail nesta entrega.

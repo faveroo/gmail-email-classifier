@@ -56,3 +56,11 @@ Responsável pelo treinamento, avaliação e persistência dos modelos.
 ## Separação importante
 
 O código de integração com Gmail não deverá conhecer detalhes internos do algoritmo de treinamento. Da mesma forma, o modelo não deverá depender diretamente da Gmail API.
+
+## Implementação local
+
+Na inferência, spam é avaliado primeiro; apenas probabilidade <= 0.20 habilita o
+modelo de categoria. O intervalo incerto vai diretamente para revisão, e >= 0.90
+sugere IA/SPAM. O vocabulário totalmente desconhecido também exige revisão.
+A saída é sugestão local; não existe código de Gmail/OAuth ou ação sobre mensagens.
+Treinamento e avaliação ficam separados da política e do loader de dados.

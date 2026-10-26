@@ -1,7 +1,6 @@
-# models/
+# Modelos locais
 
-Diretório reservado para artefatos relacionados aos modelos de Machine Learning.
-
-Modelos treinados poderão ser ignorados pelo Git dependendo de tamanho, privacidade e processo de distribuição.
-
-Nesta fase não existem modelos implementados.
+`email-classifier train` grava dois pipelines e sua política em `baseline.joblib`.
+Artefatos são ignorados pelo Git. Carregar joblib pode executar código: use somente
+arquivos de origem confiável. A versão do pacote e do scikit-learn deve coincidir;
+caso contrário retreine. Não publicar modelos treinados com dados privados.

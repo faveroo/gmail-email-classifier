@@ -55,3 +55,20 @@
 - [ ] avaliar embeddings;
 - [ ] comparar Transformers com baseline;
 - [ ] avaliar custo/benefício.
+
+## Entrega local de 2026-10-26
+
+- [x] encerrar bloqueio de implementação da Etapa 0 por autorização do usuário;
+- [x] taxonomia v1 com critérios e ambiguidade (validação real pendente);
+- [x] schema e validação de integridade;
+- [x] dataset público sintético e splits explícitos, com distribuição documentada;
+- [x] baseline de spam e categorização, treinamento e inferência separados;
+- [x] política provisória de revisão humana, métricas e registro do experimento;
+- [x] CLI local, testes, CI e documentação de execução;
+- [ ] coleta real autorizada, anonimização e revisão da taxonomia com dados representativos;
+- [ ] calibração e escolha de thresholds na validação, antes de avaliação final;
+- [ ] integração Gmail em etapa futura explícita.
+
+Os itens anteriores do roadmap referentes a dados representativos continuam pendentes.
+O baseline sintético cobre a engenharia das Etapas 1–3, sem afirmar conclusão empírica
+dessas etapas em produção.

@@ -1,0 +1,902 @@
+{
+  "source": "synthetic",
+  "dataset_sha256": "57dadb9ad39d57aa2108c32c1a2462a02c7eb95e831f80701b2e89f4cad29afd",
+  "warning": "Synthetic smoke test; not real-world quality",
+  "version": "0.1.0",
+  "sklearn_version": "1.9.1",
+  "seed": 42,
+  "policy": {
+    "spam_threshold": 0.9,
+    "legitimate_threshold": 0.2,
+    "category_threshold": 0.6
+  },
+  "splits": {
+    "train": {
+      "count": 40,
+      "distribution": {
+        "Financeiro": 4,
+        "RH": 4,
+        "Suporte": 4,
+        "Sistemas": 4,
+        "Comercial": 4,
+        "Administrativo": 4,
+        "Notificações": 4,
+        "Pessoal": 4,
+        "Outros": 4,
+        "spam": 4
+      },
+      "spam_at_0_5": {
+        "labels": [
+          false,
+          true
+        ],
+        "classification_report": {
+          "False": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          },
+          "True": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 40.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 40.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ]
+      },
+      "spam_at_policy": {
+        "labels": [
+          false,
+          true
+        ],
+        "classification_report": {
+          "False": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1-score": 0.9473684210526315,
+            "support": 36.0
+          },
+          "True": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4.0
+          },
+          "accuracy": 0.9,
+          "macro avg": {
+            "precision": 0.45,
+            "recall": 0.5,
+            "f1-score": 0.47368421052631576,
+            "support": 40.0
+          },
+          "weighted avg": {
+            "precision": 0.8099999999999999,
+            "recall": 0.9,
+            "f1-score": 0.8526315789473683,
+            "support": 40.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "spam_policy_precision": null,
+      "spam_policy_false_positives": 0,
+      "category_on_true_legitimate": {
+        "labels": [
+          "Financeiro",
+          "Suporte",
+          "RH",
+          "Sistemas",
+          "Comercial",
+          "Administrativo",
+          "Notificações",
+          "Pessoal",
+          "Outros"
+        ],
+        "classification_report": {
+          "Financeiro": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Suporte": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "RH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Sistemas": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Comercial": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Administrativo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Notificações": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Pessoal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Outros": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ]
+      },
+      "review_rate": 1.0,
+      "category_confidence_histogram": {
+        "below_0_6": 36,
+        "at_least_0_6": 0
+      },
+      "end_to_end_correct_label_rate": 0.0
+    },
+    "validation": {
+      "count": 20,
+      "distribution": {
+        "Financeiro": 2,
+        "RH": 2,
+        "Suporte": 2,
+        "Sistemas": 2,
+        "Comercial": 2,
+        "Administrativo": 2,
+        "Notificações": 2,
+        "Pessoal": 2,
+        "Outros": 2,
+        "spam": 2
+      },
+      "spam_at_0_5": {
+        "labels": [
+          false,
+          true
+        ],
+        "classification_report": {
+          "False": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1-score": 0.9473684210526315,
+            "support": 18.0
+          },
+          "True": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.9,
+          "macro avg": {
+            "precision": 0.45,
+            "recall": 0.5,
+            "f1-score": 0.47368421052631576,
+            "support": 20.0
+          },
+          "weighted avg": {
+            "precision": 0.8099999999999999,
+            "recall": 0.9,
+            "f1-score": 0.8526315789473683,
+            "support": 20.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            18,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "spam_at_policy": {
+        "labels": [
+          false,
+          true
+        ],
+        "classification_report": {
+          "False": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1-score": 0.9473684210526315,
+            "support": 18.0
+          },
+          "True": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.9,
+          "macro avg": {
+            "precision": 0.45,
+            "recall": 0.5,
+            "f1-score": 0.47368421052631576,
+            "support": 20.0
+          },
+          "weighted avg": {
+            "precision": 0.8099999999999999,
+            "recall": 0.9,
+            "f1-score": 0.8526315789473683,
+            "support": 20.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            18,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "spam_policy_precision": null,
+      "spam_policy_false_positives": 0,
+      "category_on_true_legitimate": {
+        "labels": [
+          "Financeiro",
+          "Suporte",
+          "RH",
+          "Sistemas",
+          "Comercial",
+          "Administrativo",
+          "Notificações",
+          "Pessoal",
+          "Outros"
+        ],
+        "classification_report": {
+          "Financeiro": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 2.0
+          },
+          "Suporte": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "RH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Sistemas": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "Comercial": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Administrativo": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "Notificações": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "Pessoal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Outros": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "accuracy": 0.8333333333333334,
+          "macro avg": {
+            "precision": 0.8888888888888888,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.8333333333333334,
+            "support": 18.0
+          },
+          "weighted avg": {
+            "precision": 0.8888888888888888,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.8333333333333334,
+            "support": 18.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      },
+      "review_rate": 1.0,
+      "category_confidence_histogram": {
+        "below_0_6": 18,
+        "at_least_0_6": 0
+      },
+      "end_to_end_correct_label_rate": 0.0
+    },
+    "test": {
+      "count": 20,
+      "distribution": {
+        "Financeiro": 2,
+        "RH": 2,
+        "Suporte": 2,
+        "Sistemas": 2,
+        "Comercial": 2,
+        "Administrativo": 2,
+        "Notificações": 2,
+        "Pessoal": 2,
+        "Outros": 2,
+        "spam": 2
+      },
+      "spam_at_0_5": {
+        "labels": [
+          false,
+          true
+        ],
+        "classification_report": {
+          "False": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 18.0
+          },
+          "True": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 20.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 20.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            18,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "spam_at_policy": {
+        "labels": [
+          false,
+          true
+        ],
+        "classification_report": {
+          "False": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1-score": 0.9473684210526315,
+            "support": 18.0
+          },
+          "True": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.9,
+          "macro avg": {
+            "precision": 0.45,
+            "recall": 0.5,
+            "f1-score": 0.47368421052631576,
+            "support": 20.0
+          },
+          "weighted avg": {
+            "precision": 0.8099999999999999,
+            "recall": 0.9,
+            "f1-score": 0.8526315789473683,
+            "support": 20.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            18,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "spam_policy_precision": null,
+      "spam_policy_false_positives": 0,
+      "category_on_true_legitimate": {
+        "labels": [
+          "Financeiro",
+          "Suporte",
+          "RH",
+          "Sistemas",
+          "Comercial",
+          "Administrativo",
+          "Notificações",
+          "Pessoal",
+          "Outros"
+        ],
+        "classification_report": {
+          "Financeiro": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Suporte": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "RH": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "Sistemas": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1-score": 0.8,
+            "support": 2.0
+          },
+          "Comercial": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Administrativo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Notificações": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Pessoal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Outros": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "accuracy": 0.9444444444444444,
+          "macro avg": {
+            "precision": 0.9629629629629629,
+            "recall": 0.9444444444444444,
+            "f1-score": 0.9407407407407408,
+            "support": 18.0
+          },
+          "weighted avg": {
+            "precision": 0.9629629629629629,
+            "recall": 0.9444444444444444,
+            "f1-score": 0.9407407407407408,
+            "support": 18.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      },
+      "review_rate": 1.0,
+      "category_confidence_histogram": {
+        "below_0_6": 18,
+        "at_least_0_6": 0
+      },
+      "end_to_end_correct_label_rate": 0.0
+    }
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows",
+    "dependencies": {
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pytest": "9.1.1"
+    }
+  }
+}
