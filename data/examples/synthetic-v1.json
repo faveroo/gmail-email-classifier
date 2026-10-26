@@ -1,0 +1,802 @@
+[
+  {
+    "id": "synthetic-000",
+    "group_id": "synthetic-000",
+    "subject": "Boleto de cobrança",
+    "body": "O boleto da mensalidade está disponível para pagamento.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-001",
+    "group_id": "synthetic-001",
+    "subject": "Nota fiscal emitida",
+    "body": "Segue a nota fiscal referente ao pagamento do serviço.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-002",
+    "group_id": "synthetic-002",
+    "subject": "Fatura vencida",
+    "body": "Precisamos regularizar o pagamento da fatura em atraso.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-003",
+    "group_id": "synthetic-003",
+    "subject": "Comprovante recebido",
+    "body": "Confirmamos o recebimento do pagamento da cobrança.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-004",
+    "group_id": "synthetic-004",
+    "subject": "Valor do boleto incorreto",
+    "body": "Favor corrigir o valor da cobrança antes do pagamento.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-005",
+    "group_id": "synthetic-005",
+    "subject": "Reembolso processado",
+    "body": "O reembolso financeiro será creditado após conciliação.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-006",
+    "group_id": "synthetic-006",
+    "subject": "Cobrança duplicada",
+    "body": "Identificamos duas cobranças na fatura; solicito estorno.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-007",
+    "group_id": "synthetic-007",
+    "subject": "Pagamento de fornecedor",
+    "body": "A tesouraria agendou o pagamento da nota fiscal.",
+    "is_spam": false,
+    "category": "Financeiro",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-008",
+    "group_id": "synthetic-008",
+    "subject": "Solicitação de férias",
+    "body": "Gostaria de agendar minhas férias com recursos humanos.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-009",
+    "group_id": "synthetic-009",
+    "subject": "Benefícios dos funcionários",
+    "body": "O plano de saúde dos colaboradores terá novos benefícios.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-010",
+    "group_id": "synthetic-010",
+    "subject": "Admissão de colaborador",
+    "body": "Precisamos dos documentos para admissão no departamento pessoal.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-011",
+    "group_id": "synthetic-011",
+    "subject": "Contracheque disponível",
+    "body": "A folha salarial e o contracheque estão no portal de RH.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-012",
+    "group_id": "synthetic-012",
+    "subject": "Entrevista de recrutamento",
+    "body": "Recursos humanos agendou entrevista para a vaga aberta.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-013",
+    "group_id": "synthetic-013",
+    "subject": "Saldo de férias",
+    "body": "Consulte com RH o saldo de férias do funcionário.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-014",
+    "group_id": "synthetic-014",
+    "subject": "Benefício de alimentação",
+    "body": "O benefício alimentação dos colaboradores foi atualizado.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-015",
+    "group_id": "synthetic-015",
+    "subject": "Integração de novos empregados",
+    "body": "O departamento pessoal receberá os admitidos para integração.",
+    "is_spam": false,
+    "category": "RH",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-016",
+    "group_id": "synthetic-016",
+    "subject": "Chamado de atendimento",
+    "body": "Preciso de ajuda para resolver um problema no aplicativo.",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-017",
+    "group_id": "synthetic-017",
+    "subject": "Erro no portal",
+    "body": "Solicito ao atendimento investigar o erro ao abrir o portal.",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-018",
+    "group_id": "synthetic-018",
+    "subject": "Falha na impressora",
+    "body": "Abri um chamado para o suporte consertar a impressora.",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-019",
+    "group_id": "synthetic-019",
+    "subject": "Acompanhamento de chamado",
+    "body": "O problema continua; podem investigar meu chamado de suporte?",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-020",
+    "group_id": "synthetic-020",
+    "subject": "Ajuda com relatório",
+    "body": "O relatório não abre; preciso que o atendimento resolva a falha.",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-021",
+    "group_id": "synthetic-021",
+    "subject": "Não consigo acessar boleto",
+    "body": "Solicito ajuda para investigar erro de acesso no portal.",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-022",
+    "group_id": "synthetic-022",
+    "subject": "Aplicativo trava",
+    "body": "Podem atender meu chamado e solucionar o travamento do aplicativo?",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-023",
+    "group_id": "synthetic-023",
+    "subject": "Pedido de assistência",
+    "body": "O suporte pode investigar o problema de configuração do dispositivo?",
+    "is_spam": false,
+    "category": "Suporte",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-024",
+    "group_id": "synthetic-024",
+    "subject": "Alerta de servidor",
+    "body": "Monitoramento automático detectou indisponibilidade do servidor.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-025",
+    "group_id": "synthetic-025",
+    "subject": "Manutenção programada",
+    "body": "A infraestrutura passará por manutenção técnica durante a noite.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-026",
+    "group_id": "synthetic-026",
+    "subject": "Aviso de segurança",
+    "body": "Sistema detectou tentativa suspeita de acesso à rede.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-027",
+    "group_id": "synthetic-027",
+    "subject": "Integração interrompida",
+    "body": "Alerta automático: falha na integração entre servidores.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-028",
+    "group_id": "synthetic-028",
+    "subject": "Backup concluído",
+    "body": "O monitoramento confirma execução do backup do servidor.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-029",
+    "group_id": "synthetic-029",
+    "subject": "Certificado próximo de expirar",
+    "body": "Aviso técnico de segurança: renovar certificado da infraestrutura.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-030",
+    "group_id": "synthetic-030",
+    "subject": "Monitoramento de disco",
+    "body": "Alerta automático de capacidade esgotada no servidor de arquivos.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-031",
+    "group_id": "synthetic-031",
+    "subject": "Atualização da infraestrutura",
+    "body": "Manutenção técnica instalará atualização de segurança nos sistemas.",
+    "is_spam": false,
+    "category": "Sistemas",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-032",
+    "group_id": "synthetic-032",
+    "subject": "Proposta de venda",
+    "body": "Segue proposta comercial para negociação dos nossos serviços.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-033",
+    "group_id": "synthetic-033",
+    "subject": "Cotação de fornecedor",
+    "body": "Solicitamos cotação para avaliar uma nova compra.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-034",
+    "group_id": "synthetic-034",
+    "subject": "Negociação de contrato",
+    "body": "Podemos negociar o preço da proposta antes da contratação?",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-035",
+    "group_id": "synthetic-035",
+    "subject": "Oferta solicitada",
+    "body": "Conforme solicitado segue oferta comercial para aquisição do produto.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-036",
+    "group_id": "synthetic-036",
+    "subject": "Reunião de vendas",
+    "body": "A equipe comercial apresentará a proposta ao cliente.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-037",
+    "group_id": "synthetic-037",
+    "subject": "Condições da proposta",
+    "body": "O fornecedor enviou desconto para a negociação da oferta.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-038",
+    "group_id": "synthetic-038",
+    "subject": "Orçamento solicitado",
+    "body": "Segue cotação de serviços para análise comercial da compra.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-039",
+    "group_id": "synthetic-039",
+    "subject": "Renegociação da oferta",
+    "body": "Queremos negociar condições comerciais antes de aceitar a proposta.",
+    "is_spam": false,
+    "category": "Comercial",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-040",
+    "group_id": "synthetic-040",
+    "subject": "Arquivo de contrato aprovado",
+    "body": "Favor arquivar os documentos do contrato já assinado.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-041",
+    "group_id": "synthetic-041",
+    "subject": "Reserva de sala",
+    "body": "A administração precisa reservar uma sala para a reunião.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-042",
+    "group_id": "synthetic-042",
+    "subject": "Entrega de materiais",
+    "body": "Organizar a logística de entrega dos materiais de escritório.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-043",
+    "group_id": "synthetic-043",
+    "subject": "Assinatura de documento",
+    "body": "Precisamos coletar assinatura no termo administrativo aprovado.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-044",
+    "group_id": "synthetic-044",
+    "subject": "Manutenção predial",
+    "body": "A administração agendou reparos nas instalações do escritório.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-045",
+    "group_id": "synthetic-045",
+    "subject": "Inventário de equipamentos",
+    "body": "Favor atualizar o inventário patrimonial e arquivar os documentos.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-046",
+    "group_id": "synthetic-046",
+    "subject": "Controle de acesso predial",
+    "body": "A recepção organizará os crachás de entrada do escritório.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-047",
+    "group_id": "synthetic-047",
+    "subject": "Envio de documentos",
+    "body": "O contrato assinado deve ser registrado no arquivo administrativo.",
+    "is_spam": false,
+    "category": "Administrativo",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-048",
+    "group_id": "synthetic-048",
+    "subject": "Inscrição confirmada",
+    "body": "Sua inscrição no evento foi confirmada. Nenhuma ação necessária.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-049",
+    "group_id": "synthetic-049",
+    "subject": "Atualização de evento",
+    "body": "Aviso informativo: a programação do evento foi publicada.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-050",
+    "group_id": "synthetic-050",
+    "subject": "Lembrete de webinar",
+    "body": "O webinar em que você se inscreveu começa amanhã.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-051",
+    "group_id": "synthetic-051",
+    "subject": "Confirmação de presença",
+    "body": "Sua presença na palestra foi registrada com sucesso.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-052",
+    "group_id": "synthetic-052",
+    "subject": "Gravação disponível",
+    "body": "O evento encerrou e sua gravação está disponível para participantes.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-053",
+    "group_id": "synthetic-053",
+    "subject": "Agenda publicada",
+    "body": "Informamos a publicação da agenda da conferência em que se inscreveu.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-054",
+    "group_id": "synthetic-054",
+    "subject": "Lembrete de palestra",
+    "body": "Aviso de início da palestra confirmada na sua inscrição.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-055",
+    "group_id": "synthetic-055",
+    "subject": "Certificado de participação",
+    "body": "Informamos que o certificado do evento está disponível.",
+    "is_spam": false,
+    "category": "Notificações",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-056",
+    "group_id": "synthetic-056",
+    "subject": "Jantar em família",
+    "body": "Vamos combinar um jantar em casa com a família no sábado?",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-057",
+    "group_id": "synthetic-057",
+    "subject": "Aniversário de amigo",
+    "body": "Te espero na festa de aniversário com nossos amigos.",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-058",
+    "group_id": "synthetic-058",
+    "subject": "Viagem de férias da família",
+    "body": "Vamos planejar nossa viagem pessoal para visitar os primos.",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-059",
+    "group_id": "synthetic-059",
+    "subject": "Almoço de domingo",
+    "body": "A família está combinando almoço na casa da avó.",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-060",
+    "group_id": "synthetic-060",
+    "subject": "Encontro com amigos",
+    "body": "Que tal nos encontrarmos para conversar e tomar café?",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-061",
+    "group_id": "synthetic-061",
+    "subject": "Fotos da família",
+    "body": "Separei as fotos do nosso passeio pessoal para compartilhar com vocês.",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-062",
+    "group_id": "synthetic-062",
+    "subject": "Cinema no fim de semana",
+    "body": "Vamos ao cinema com nossos amigos depois do jantar?",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-063",
+    "group_id": "synthetic-063",
+    "subject": "Visita aos parentes",
+    "body": "Nossa família vai visitar os tios no próximo feriado.",
+    "is_spam": false,
+    "category": "Pessoal",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-064",
+    "group_id": "synthetic-064",
+    "subject": "História da cerâmica",
+    "body": "Texto informativo solicitado sobre cerâmica e arte antiga.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-065",
+    "group_id": "synthetic-065",
+    "subject": "Leitura sobre astronomia",
+    "body": "Material educativo solicitado sobre estrelas e planetas.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-066",
+    "group_id": "synthetic-066",
+    "subject": "Ensaio de literatura",
+    "body": "Compartilho o ensaio cultural sobre poesia que você pediu.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-067",
+    "group_id": "synthetic-067",
+    "subject": "Curiosidades de botânica",
+    "body": "Artigo educativo solicitado sobre plantas e biodiversidade.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-068",
+    "group_id": "synthetic-068",
+    "subject": "Estudo de arqueologia",
+    "body": "Segue leitura cultural solicitada sobre escavações antigas.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-069",
+    "group_id": "synthetic-069",
+    "subject": "Artigo sobre oceanos",
+    "body": "O texto educativo solicitado explica ecossistemas marinhos.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-070",
+    "group_id": "synthetic-070",
+    "subject": "Pesquisa de história da arte",
+    "body": "Compartilho material cultural pedido sobre pintura renascentista.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-071",
+    "group_id": "synthetic-071",
+    "subject": "Texto sobre geologia",
+    "body": "A leitura educativa solicitada descreve rochas e minerais.",
+    "is_spam": false,
+    "category": "Outros",
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-072",
+    "group_id": "synthetic-072",
+    "subject": "Prêmio milionário garantido",
+    "body": "Você ganhou dinheiro fácil! Pague taxa antecipada para liberar prêmio.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-073",
+    "group_id": "synthetic-073",
+    "subject": "Oferta indesejada urgente",
+    "body": "Compre agora produto milagroso com lucro garantido sem esforço.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-074",
+    "group_id": "synthetic-074",
+    "subject": "Senha bloqueada clique já",
+    "body": "Informe sua senha completa neste link suspeito para evitar bloqueio.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-075",
+    "group_id": "synthetic-075",
+    "subject": "Renda instantânea secreta",
+    "body": "Ganhe fortuna sem trabalhar. Transfira dinheiro para receber bônus.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "train"
+  },
+  {
+    "id": "synthetic-076",
+    "group_id": "synthetic-076",
+    "subject": "Herança inesperada",
+    "body": "Deposite taxa urgente para receber herança de desconhecido.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-077",
+    "group_id": "synthetic-077",
+    "subject": "Promoção não solicitada",
+    "body": "Oferta milagrosa enviada em massa. Compre sem receita agora.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "validation"
+  },
+  {
+    "id": "synthetic-078",
+    "group_id": "synthetic-078",
+    "subject": "Resgate seu prêmio falso",
+    "body": "Envie dados bancários e pague a taxa para receber fortuna.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "test"
+  },
+  {
+    "id": "synthetic-079",
+    "group_id": "synthetic-079",
+    "subject": "Lucro garantido hoje",
+    "body": "Oferta não solicitada de investimento milagroso e dinheiro instantâneo.",
+    "is_spam": true,
+    "category": null,
+    "source": "synthetic",
+    "split": "test"
+  }
+]
