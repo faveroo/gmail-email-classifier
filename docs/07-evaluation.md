@@ -46,3 +46,32 @@ usa linhas verdadeiras e colunas previstas na ordem labels. Revisão conta como 
 não como classificação correta. O diagnóstico de categorias isolado não mede erros
 propagados do primeiro estágio. Não há seleção de parâmetros usando o teste.
 80 exemplos sintéticos verificam execução e isolamento, não generalização real.
+
+Relatórios do fluxo privado identificam `source: gmail_reviewed`; relatórios sintéticos
+continuam identificados como `synthetic`. Não houve avaliação com mensagens reais
+nesta entrega. A coleta recente limitada não é uma amostra aleatória: planejar cobertura
+de classes, períodos e templates antes de interpretar métricas. O comando de treino
+gera métricas de todos os splits, mas decisões devem usar validação; teste é reservado
+à avaliação final. Nenhuma seleção automática de parâmetros/calibração foi adicionada.
+
+## Teste exploratório com rótulos de IA
+
+Em 2026-10-27 foi executado um experimento autorizado com `gmail_ai_labeled`.
+Suas métricas medem concordância com rótulos do ChatGPT, não acurácia com referência
+humana independente. Relatar separadamente o categorizador isolado e o fluxo com
+abstenção. Comparar com o baseline anterior usando as mesmas mensagens e splits.
+
+O relatório identifica procedência por estágio, quantidade de grupos, quantidade de
+positivos de spam e se seu recall é avaliável. Classes ausentes não foram aprendidas
+ou avaliadas por presunção. Métricas detalhadas, manifesto e comparação desse experimento
+permanecem privados. Nenhum ajuste de parâmetros/thresholds foi feito usando seu teste.
+
+## SpamShield multilíngue
+
+O experimento tem split novo, determinístico e estratificado por idioma × label, com
+deduplicação textual exata anterior à divisão. Relatórios mostram F1 spam, F1 macro,
+acurácia, matriz de confusão e métricas por idioma nos três conjuntos. Use validação
+para decisões futuras e mantenha teste como medida final reservada. As métricas incluem
+SMS públicos e não são validação externa para e-mails; Dutch e Italian não permitem
+estimar separação ham/spam por ausência de ham. Deduplicação exata não elimina vazamento
+por paráfrases ou templates semelhantes.

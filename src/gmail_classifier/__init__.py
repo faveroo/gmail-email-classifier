@@ -1,3 +1,3 @@
-"""Offline baseline. No Gmail adapter or network access."""
+"""Local baseline with a separate, optional read-only Gmail adapter."""
 
 __version__ = "0.1.0"

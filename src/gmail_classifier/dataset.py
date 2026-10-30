@@ -1,4 +1,4 @@
-"""Strict validation of the synthetic dataset contract."""
+"""Strict validation of synthetic and explicitly opted-in private datasets."""
 
 import json
 from pathlib import Path
@@ -15,7 +15,9 @@ def normalize_text(subject: str, body: str) -> str:
     return " ".join(f"{subject} {body}".casefold().split())
 
 
-def validate_records(records: list[dict]) -> list[dict]:
+def validate_records(records: list[dict], *, allow_private=False, allow_ai=False) -> list[dict]:
+    if allow_ai and not allow_private:
+        raise ValueError("AI labels require private-data opt-in")
     if not isinstance(records, list) or not records:
         raise ValueError("Dataset must be a non-empty JSON array")
     ids, texts, groups = set(), set(), {}
@@ -34,8 +36,11 @@ def validate_records(records: list[dict]) -> list[dict]:
             raise ValueError(f"{prefix}: empty message")
         if type(row["is_spam"]) is not bool:
             raise ValueError(f"{prefix}: is_spam must be a boolean")
-        if row["source"] != "synthetic" or row["split"] not in SPLITS:
-            raise ValueError(f"{prefix}: only synthetic source and known splits are allowed")
+        sources = {"synthetic", "gmail_reviewed"} if allow_private else {"synthetic"}
+        if allow_ai:
+            sources.add("gmail_ai_labeled")
+        if row["source"] not in sources or row["split"] not in SPLITS:
+            raise ValueError(f"{prefix}: unsupported source or split (private data requires opt-in)")
         if row["is_spam"]:
             if row["category"] is not None:
                 raise ValueError(f"{prefix}: spam category must be null")
@@ -48,6 +53,21 @@ def validate_records(records: list[dict]) -> list[dict]:
         ids.add(row["id"])
         texts.add(text)
         groups[row["group_id"]] = row["split"]
+    if len({r["source"] for r in records}) != 1:
+        raise ValueError("Do not mix synthetic and private data in one evaluation")
+    if records[0]["source"] == "gmail_ai_labeled":
+        # Exploratory AI labels have incomplete class coverage; do not invent examples.
+        training = [r for r in records if r["split"] == "train"]
+        categories = {r["category"] for r in training if not r["is_spam"]}
+        if len(categories) < 2:
+            raise ValueError("AI experiment requires two legitimate categories in training")
+        for split in SPLITS:
+            rows = [r for r in records if r["split"] == split]
+            if not rows:
+                raise ValueError(f"{split}: requires held-out groups")
+            if any(not r["is_spam"] and r["category"] not in categories for r in rows):
+                raise ValueError(f"{split}: category missing from training")
+        return records
     for split in SPLITS:
         rows = [r for r in records if r["split"] == split]
         if {r["is_spam"] for r in rows} != {True, False}:
@@ -57,5 +77,9 @@ def validate_records(records: list[dict]) -> list[dict]:
     return records
 
 
-def load_dataset(path: str | Path) -> list[dict]:
-    return validate_records(json.loads(Path(path).read_text(encoding="utf-8")))
+def load_dataset(path: str | Path, *, allow_private=False, allow_ai=False) -> list[dict]:
+    if allow_private:
+        from .private_storage import private_path
+        path = private_path(path)
+    return validate_records(json.loads(Path(path).read_text(encoding="utf-8")),
+                            allow_private=allow_private, allow_ai=allow_ai)

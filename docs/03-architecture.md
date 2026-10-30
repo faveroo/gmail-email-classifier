@@ -62,5 +62,11 @@ O código de integração com Gmail não deverá conhecer detalhes internos do a
 Na inferência, spam é avaliado primeiro; apenas probabilidade <= 0.20 habilita o
 modelo de categoria. O intervalo incerto vai diretamente para revisão, e >= 0.90
 sugere IA/SPAM. O vocabulário totalmente desconhecido também exige revisão.
-A saída é sugestão local; não existe código de Gmail/OAuth ou ação sobre mensagens.
+A saída é sugestão local; o adaptador Gmail/OAuth opcional permite exclusivamente leitura.
 Treinamento e avaliação ficam separados da política e do loader de dados.
+
+`gmail.py` cuida de OAuth, paginação e extração de texto, sem importar ML.
+`review.py` valida revisão humana e prepara arquivos; a simulação offline carrega
+um modelo já treinado, sem conectar ao Gmail. `private_storage.py` bloqueia caminhos
+privados dentro do checkout e de árvores Git. Coleta, revisão, treino e inferência
+são comandos separados; o dataset nunca depende da caixa de produção durante o fit.

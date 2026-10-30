@@ -4,9 +4,15 @@ Este arquivo contém instruções para qualquer assistente de IA, agente de cód
 
 ## Regra principal
 
-O projeto está em **implementação local com dados sintéticos**, autorizada em 2026-10-26.
+O projeto tem **baseline local com dados sintéticos** (2026-10-26) e **etapa Gmail OAuth somente leitura, coleta privada e revisão humana** autorizada em 2026-10-27.
 
-Python está autorizado para schema, baseline local, CLI e testes. Gmail, OAuth e dados reais exigem uma etapa explícita posterior. Execute `python -m pytest` antes de concluir mudanças de código.
+Python está autorizado para schema, baseline local, CLI e testes. OAuth Gmail somente leitura e preparação de dados reais privados estão autorizados; conexão depende de configuração no Google Cloud e consentimento no navegador. Escrita no Gmail exige uma etapa explícita posterior. Execute `python -m pytest` antes de concluir mudanças de código.
+
+Em 2026-10-27 o usuário também autorizou explicitamente o ChatGPT a classificar a
+amostra pendente, treinar e testar. Rótulos de IA devem ter procedência própria
+(`gmail_ai_labeled`), sem fingir revisão humana ou apresentar concordância como
+acurácia validada por pessoas. O fluxo experimental exige opt-in separado; o fluxo
+de dataset humano continua exigindo revisão. Artefatos reais permanecem privados.
 
 ## Antes de realizar mudanças
 

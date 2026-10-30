@@ -2,7 +2,7 @@
 
 Projeto experimental para construir um classificador de e-mails integrado ao Gmail, usando Machine Learning em Python.
 
-> **Estado atual:** baseline local executável com dados exclusivamente sintéticos. Implementação iniciada em 2026-10-26.
+> **Estado atual:** Gmail somente leitura e primeiro experimento privado com rótulos do ChatGPT treinado/testado em 2026-10-27. Avaliação humana independente e automação Gmail permanecem pendentes.
 
 ## Objetivo
 
@@ -60,7 +60,7 @@ gmail-email-classifier/
 └── README.md
 ```
 
-O pacote Python fica em `src/gmail_classifier/`; testes em `tests/`, exemplos públicos em `data/examples/`. Não há integração Gmail implementada.
+O pacote Python fica em `src/gmail_classifier/`; testes em `tests/`, exemplos públicos em `data/examples/`. O adaptador Gmail é separado do ML e só permite leitura.
 
 ## Segurança
 
@@ -102,7 +102,7 @@ A política sugere `IA/SPAM` a partir de 0.90. Até 0.20 de probabilidade de spa
 a categoria precisa de confiança >= 0.60. Os demais casos vão para `IA/Revisar`.
 Esses valores são provisórios e configuráveis no treinamento com `--spam-threshold`,
 `--legitimate-threshold` e `--category-threshold`. Não são garantias de precisão.
-A CLI só produz JSON; não modifica mensagens. Texto totalmente fora do vocabulário
+A CLI não modifica mensagens; as operações concluídas produzem JSON. Texto totalmente fora do vocabulário
 vai para revisão, mas esse filtro não detecta toda mudança de domínio.
 
 O dataset contém 80 mensagens inventadas (40 treino, 20 validação, 20 teste):
@@ -113,9 +113,63 @@ probabilidades. Não reduza os thresholds apenas para obter mais labels automát
 Carregue apenas modelos treinados por você em ambiente confiável: o formato joblib
 pode executar código ao ser aberto. Retreine ao trocar a versão do scikit-learn.
 Não forneça mensagens privadas nos argumentos da CLI, pois podem ficar no histórico
-do terminal. A fase atual aceita apenas datasets declarados como `synthetic`; essa
-validação não consegue provar que um texto foi realmente inventado.
+do terminal. O treino padrão aceita apenas datasets declarados como `synthetic`; essa
+validação não consegue provar que um texto foi realmente inventado. O fluxo privado
+exige revisão e `--allow-private`, com arquivos fora do repositório. O experimento
+explicitamente autorizado com rótulos de IA usa source próprio e também `--allow-ai-labels`.
 
 Resultado inicial: a política padrão encaminhou 100% dos exemplos para revisão.
 Consulte [o registro do experimento](docs/experiments/README.md) antes de interpretar
 as métricas isoladas dos modelos.
+
+## Próxima etapa: Gmail somente leitura
+
+O [guia de configuração e coleta](docs/12-gmail-readonly-setup.md) explica como criar
+o cliente OAuth no Google Cloud, autenticar e preparar uma amostra rotulada local.
+Instale as dependências opcionais com `python -m pip install -e ".[dev,gmail]"`.
+
+Comandos disponíveis: `gmail-auth`, `gmail-collect`, `review`, `prepare-dataset` e `predict-batch`.
+Credenciais, tokens, coletas e artefatos privados ficam por padrão em
+`%LOCALAPPDATA%\GmailEmailClassifier`, fora do Git. A coleta é limitada e o filtro
+de dados pessoais exige revisão humana complementar. A primeira autenticação e coleta
+real foram concluídas em 2026-10-27. A primeira simulação com o baseline sintético
+encaminhou as 50 mensagens para revisão. Posteriormente, por solicitação explícita,
+o ChatGPT rotulou a amostra e um novo categorizador foi treinado/testado localmente.
+O estágio de spam anterior foi preservado por falta de exemplos positivos. A política
+continua conservadora e nenhuma alteração foi feita no Gmail.
+
+Para rotular a amostra no navegador local, execute
+`.\.venv\Scripts\email-classifier review`. A tela salva o progresso e mostra a
+cobertura das classes por split. Esse é o fluxo para referência humana; o experimento
+com supervisão da IA é separado e suas métricas não representam acurácia validada por pessoas.
+
+### Treinamento experimental com rótulos de IA
+
+O source `gmail_ai_labeled` requer opt-in explícito e todos os arquivos fora do Git:
+
+```powershell
+$privateDir = Join-Path $env:LOCALAPPDATA "GmailEmailClassifier"
+.\.venv\Scripts\email-classifier train --allow-private --allow-ai-labels --dataset "$privateDir\dataset-ai-v1.json" --spam-reference models/baseline.joblib --model "$privateDir\baseline-ai-v1.joblib" --report "$privateDir\baseline-ai-v1-report.json"
+```
+
+Não há chamada a LLM no treinamento: os rótulos foram atribuídos pelo ChatGPT durante
+a tarefa autorizada. O relatório indica supervisão da IA, fontes por estágio e limites
+de cobertura. `--spam-reference` preserva um detector confiável quando a amostra tem
+uma única classe de spam. O modelo experimental deve ser selecionado explicitamente
+em `predict`/`predict-batch`; o baseline original continua disponível.
+
+## Experimento multilíngue SpamShield
+
+O pipeline separado `spamshield` usa o corpus de SMS [M-Arjun/SpamShield-Datasets](https://huggingface.co/datasets/M-Arjun/SpamShield-Datasets), que informa 149.359 mensagens em 23 idiomas e licença CC-BY-4.0. O acesso aos arquivos é gated: entre na sua conta Hugging Face, aceite as condições na página do dataset e autentique a CLI localmente. O código não envia credenciais a terceiros.
+
+```powershell
+python -m pip install -e ".[multilingual,dashboard]"
+hf auth login
+python -m gmail_classifier.cli download-spamshield
+python -m gmail_classifier.cli train-spamshield
+streamlit run src/gmail_classifier/dashboard.py
+```
+
+`train-spamshield` baixa o parquet para o cache Hugging Face se `--dataset` não for informado. O treino remove duplicatas exatas normalizadas e faz divisão estratificada 70/15/15 por idioma e rótulo, com seed 42. Usa TF-IDF de caracteres (n-gramas 2–5) e Logistic Regression; o relatório inclui métricas globais e por idioma nos três splits. O painel permite testar texto localmente, consultar métricas/matriz de confusão e inspecionar a distribuição.
+
+Os artefatos ficam em `models/spamshield-multilingual.joblib` e `reports/spamshield-multilingual.json`, ambos ignorados pelo Git; os dados permanecem no cache Hugging Face. Atribuição CC-BY-4.0: M-Arjun, SpamShield-Datasets, [licença CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); o dataset é transformado por deduplicação e separação em splits. Este classificador é binário (spam/ham) e o corpus é de SMS, não de Gmail. Dutch e Italian não têm exemplos ham; métricas nesses idiomas não medem capacidade de separar spam e ham. A avaliação do dataset não deve ser interpretada como desempenho em e-mails.

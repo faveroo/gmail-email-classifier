@@ -72,3 +72,33 @@
 Os itens anteriores do roadmap referentes a dados representativos continuam pendentes.
 O baseline sintético cobre a engenharia das Etapas 1–3, sem afirmar conclusão empírica
 dessas etapas em produção.
+
+## Etapa de leitura autorizada em 2026-10-27
+
+- [x] implementar OAuth Desktop somente leitura, separado do ML;
+- [x] implementar coleta limitada com consulta explícita e IDs locais;
+- [x] implementar minimização de texto e exigir revisão humana complementar;
+- [x] preparar contrato privado revisado e treino com opt-in fora do Git;
+- [x] implementar simulação offline em lote, sem alterações na caixa;
+- [x] testar OAuth/API com objetos simulados e documentar configuração;
+- [x] configurar projeto/cliente no Google Cloud e autenticar conta real;
+- [x] executar primeira coleta privada de 50 mensagens e simulação offline (2026-10-27);
+- [ ] coletar e revisar amostras reais representativas;
+- [ ] revisar taxonomia, medir resultados e escolher thresholds na validação;
+- [ ] avaliar conjunto de teste final sem usá-lo para ajustes;
+- [ ] autorizar e implementar aplicação reversível de labels em etapa separada.
+
+A implementação permite iniciar a coleta; os itens de execução real e avaliação
+empírica continuam pendentes. A lista da entrega anterior registra seu escopo histórico.
+
+## Experimento com supervisão de IA autorizado em 2026-10-27
+
+- [x] atribuir rótulos pelo ChatGPT a pedido explícito, com procedência separada;
+- [x] agrupar conversas/templates e separar treino/validação/teste sem sobreposição;
+- [x] treinar categorizador clássico com o treino privado e preservar detector anterior de spam;
+- [x] comparar categorizador e fluxo completo ao baseline nos mesmos splits;
+- [x] registrar métricas e limitações em artefatos privados, sem alegar referência humana;
+- [ ] obter avaliação humana independente e ampliar cobertura de categorias/spam.
+
+Essa entrega experimental não conclui a validação empírica com referência humana nem
+autoriza escrita no Gmail. O teste consultado não deve orientar ajustes futuros.

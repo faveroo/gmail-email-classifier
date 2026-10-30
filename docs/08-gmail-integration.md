@@ -35,3 +35,23 @@ Na fase inicial, não:
 - arquivar automaticamente mensagens importantes.
 
 Preferir labels `IA/*`, que tornam as decisões reversíveis e auditáveis.
+
+## Etapa somente leitura implementada em 2026-10-27
+
+O usuário escolheu OAuth somente leitura para preparar amostras reais. O adaptador
+opcional usa exclusivamente `https://www.googleapis.com/auth/gmail.readonly`,
+cliente OAuth Desktop dedicado e callback loopback com PKCE. Credenciais e tokens
+ficam fora do repositório; tokens com escopos adicionais são rejeitados.
+
+`gmail-auth` abre o consentimento; `gmail-collect` apenas reutiliza/renova um token.
+A coleta usa `users.messages.list` e `users.messages.get(format=full)`, com consulta
+explícita, paginação e limite de 1–500 mensagens consultadas. Spam/Lixeira ficam fora
+por padrão e sua inclusão exige flag. Não há busca separada de anexos nem métodos de escrita.
+
+`predict-batch` faz simulação sobre a coleta local, sem conexão ao Gmail.
+Não há criação/aplicação de labels nesta implementação. Configuração Cloud e
+consentimento real concluídos em 2026-10-27. Primeira coleta de 50 mensagens recentes
+e simulação offline concluídas, com todas encaminhadas para revisão e nenhuma
+alteração na caixa. Revisão de privacidade e rótulos ainda pendente.
+Instruções e referências oficiais no
+[guia de configuração](12-gmail-readonly-setup.md).
